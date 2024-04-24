@@ -1,2 +1,5 @@
 <?php
-include 'mission.view.php';
+
+$heading = 'Mission';
+
+include 'views/mission.view.php';
