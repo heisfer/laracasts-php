@@ -7,33 +7,12 @@
 </head>
 
 <body>
-  <h1>Recommended books</h1>
-
+  <h1><?= $business['name'] ?></h1>
   <ul>
-    <?php foreach ($books as $book) : ?>
+    <?php foreach ($business['categories'] as $categorie) : ?>
       <li>
-        <a href="<?= $book['purchaseUrl'] ?>">
-          <?= $book['name'] ?> (<?= $book['published'] ?>)
-          - By <?= $book['author'] ?>
+        <?= $categorie ?>
 
-        </a>
-
-      </li>
-    <?php endforeach; ?>
-  </ul>
-  <h1>Filtered books</h1>
-  <ul>
-    <?php foreach ($filteredBooks as $book) : ?>
-      <li><?= $book['name'] ?> - By <?= $book['author'] ?></li>
-    <?php endforeach; ?>
-  </ul>
-  <h1>Movies</h1>
-  <ul>
-    <?php foreach ($filteredMovies as $movie) : ?>
-      <li>
-        <a href="<?= $movie['purchaseUrl'] ?>">
-          <?= $movie['title'] ?> ( <?= $movie['releaseYear'] ?>) - By <?= $movie['studio'] ?>
-        </a>
       </li>
     <?php endforeach; ?>
   </ul>
