@@ -12,8 +12,14 @@ $pdo = new PDO($dsn, $username, $password);
 $statement = $pdo->prepare("SELECT * FROM posts");
 $statement->execute();
 
-$posts = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-foreach ($posts as $post) {
-  echo "<li>" . $post['title'] . "</li>";
-}
+// $posts = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+// This doesn't work if fetchAll is uncommented
+// Result is first row in DB
+$hwpost = $statement->fetch(PDO::FETCH_ASSOC);
+echo "<li>" . $hwpost['title'] . "</li>";
+
+// foreach ($posts as $post) {
+//  echo "<li>" . $post['title'] . "</li>";
+// }
