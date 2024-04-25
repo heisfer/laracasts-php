@@ -30,6 +30,15 @@ function base_path($path)
 }
 
 
+function abort($code = 404)
+{
+  http_response_code($code);
+
+  require base_path("views/{$code}.view.php");
+
+  die();
+}
+
 function view($path, $attributes = [])
 {
   extract($attributes);
