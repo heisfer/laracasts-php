@@ -2,8 +2,14 @@
 $config = require('config.php');
 $db = new Database($config['database']);
 
+$currentUserId = 3;
+
 $heading = 'Note';
 
-$id = $_GET['id'];
-$note = $db->query('select * from notes where id = ?', [$id])->fetch();
+$note = $db->query('select * from notes where id = ? ', [$_GET['id']])->findOrFail();
+
+authorize($note['user_id'] !== 3);
+
+
+
 include 'views/note.view.php';
