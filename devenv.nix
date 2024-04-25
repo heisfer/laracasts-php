@@ -31,6 +31,7 @@
     enable = true;
     ini = ''
       memory_limit = 256M
+      display_errors = on
     '';
     fpm.pools.web = {
       settings = {
@@ -46,7 +47,7 @@
   services.caddy.enable = true;
   services.caddy.virtualHosts."http://localhost:8000" = {
     extraConfig = ''
-      root * src
+      root * public
       php_fastcgi unix/${config.languages.php.fpm.pools.web.socket}
       file_server
     '';

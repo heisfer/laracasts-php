@@ -1,5 +1,5 @@
 <?php
-$config = require('config.php');
+$config = require base_path('config.php');
 $db = new Database($config['database']);
 
 $currentUserId = 3;
@@ -12,4 +12,7 @@ authorize($note['user_id'] !== 3);
 
 
 
-include 'views/notes/show.view.php';
+view('notes/show.view.php', [
+  'heading' => 'My note',
+  'note' => $note
+]);
