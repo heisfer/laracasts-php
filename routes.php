@@ -1,4 +1,7 @@
 <?php
+
+use Core\Response;
+
 # Tutorial used array_key_exists and $routes array. I replaced it with "match";
 match ($uri) {
   '/' => require 'controllers/index.php',
@@ -8,5 +11,5 @@ match ($uri) {
   '/notes' => require 'controllers/notes/index.php',
   '/notes/create' => require 'controllers/notes/create.php',
   '/note' => require 'controllers/notes/show.php',
-  default => abort(404),
+  default => abort(Response::NOT_FOUND),
 };
