@@ -5,8 +5,8 @@ match ($uri) {
   '/about' => require 'controllers/about.php',
   '/contact' => require 'controllers/contact.php',
   '/mission' => require 'controllers/mission.php',
-  '/notes' => require 'controllers/notes.php',
-  '/notes/create' => require 'controllers/notes-create.php',
-  '/note' => require 'controllers/note.php',
+  '/notes' => require 'controllers/notes/index.php',
+  '/notes/create' => require 'controllers/notes/create.php',
+  '/note' => require 'controllers/notes/show.php',
   default => abort(404),
 };

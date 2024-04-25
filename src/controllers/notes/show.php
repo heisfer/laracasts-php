@@ -12,4 +12,4 @@ authorize($note['user_id'] !== 3);
 
 
 
-include 'views/note.view.php';
+include 'views/notes/show.view.php';
