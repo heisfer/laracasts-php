@@ -15,5 +15,7 @@ match ($uri) {
   '/about' => require 'controllers/about.php',
   '/contact' => require 'controllers/contact.php',
   '/mission' => require 'controllers/mission.php',
+  '/notes' => require 'controllers/notes.php',
+  '/note' => require 'controllers/note.php',
   default => abort(404),
 };
