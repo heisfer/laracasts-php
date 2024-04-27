@@ -1,13 +1,16 @@
 <?php
 
+use Core\App;
 use Core\Database;
 use Core\Validator;
 
+/**
+ * @var Database $db
+ */
+$db = App::resolve(Database::class);
+
 $body = $_POST['body'];
 $errors = [];
-
-$config = require base_path('config.php');
-$db = new Database($config['database']);
 
 
 if (!Validator::string($body, 1, 1000)) {
