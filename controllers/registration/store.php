@@ -47,7 +47,7 @@ if ($user) {
     'password' => $password,
   ]);
 
-  $_SESSION['email'] = [
+  $_SESSION['user'] = [
     'email' => $email
   ];
 
