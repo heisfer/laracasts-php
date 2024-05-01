@@ -4,18 +4,24 @@
 use Core\App;
 use Core\Database;
 use Core\Validator;
-use Http\Forms\LoginForm;
 
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-
 // validate the user input
-$form = new LoginForm();
+$errors = [];
+if (!Validator::email($email)) {
+  $errors['email'] = "Please provide correct email";
+}
 
-if (!$form->validate($email, $password)) {
-  return view('session/create.view.php', [
-    'errors' => $form->errors(),
+if (!Validator::string($password)) {
+  $errors['password'] = "Min 8 characters";
+}
+
+
+if (!empty($errors)) {
+  return view('sessions/create.view.php', [
+    'errors' => $errors
   ]);
 }
 
