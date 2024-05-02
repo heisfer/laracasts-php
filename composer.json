@@ -1,16 +1,17 @@
 {
-    "name": "heisfer/learning",
-    "license": "MIT",
-    "autoload": {
-        "psr-4": {
-            "Heisfer\\Learning\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "heisfer",
-            "email": "heisfer@aol.com"
-        }
-    ],
-    "require": {}
+  "name": "heisfer/learning",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Core\\": "Core/",
+      "Http\\": "Http/"
+    }
+  },
+  "authors": [
+    {
+      "name": "heisfer",
+      "email": "heisfer@aol.com"
+    }
+  ],
+  "require": {}
 }
