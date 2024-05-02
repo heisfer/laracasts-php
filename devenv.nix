@@ -52,4 +52,8 @@
       file_server
     '';
   };
+
+  enterShell = ''
+    export PATH="$PATH:./vendor/bin"
+  '';
 }
